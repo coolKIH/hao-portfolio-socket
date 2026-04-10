@@ -209,14 +209,14 @@ async function startServer() {
         const client = await pool.connect();
         console.log('✅ Database connected successfully');
         client.release();
-
-        server.listen(port, () => {
-            console.log(`🚀 Server running on port ${port}`);
-        });
     } catch (err) {
-        console.error('❌ DB connection failed:', err.message);
+        console.error('❌ DB connection failed:', err);
         process.exit(1);
     }
+
+    server.listen(port, () => {
+        console.log(`🚀 Server running on port ${port}`);
+    });
 }
 
 startServer();
