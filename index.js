@@ -109,7 +109,7 @@ wss.on('connection', async (ws, req) => {
             ipRateLimit.set(ip, now);
 
             const insertQuery = 'INSERT INTO footprints (content, nickname) VALUES ($1, $2) RETURNING *';
-            const insertResult = await pool.query(insertQuery, [content.trim(), finalNickname]);
+            const insertResult = await pool.query(insertQuery, [cleanContent, finalNickname]);
 
             const payload = JSON.stringify({ type: 'NEW_MESSAGE', data: insertResult.rows[0] });
 
