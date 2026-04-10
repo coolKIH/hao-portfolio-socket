@@ -105,7 +105,19 @@ async function handleIncomingMessage(ws, wss, rawData, ip) {
         ipRateLimit.set(ip, now); // Update rate limit timestamp
 
         const insertQuery = 'INSERT INTO footprints (content, nickname) VALUES ($1, $2) RETURNING *';
-        const insertResult = await pool.query(insertQuery, [cleanContent, finalNickname]);
+
+        let insertResult;
+        try {
+            insertResult = await pool.query(insertQuery, [cleanContent, finalNickname]);
+        } catch (err) {
+            console.error('❌ Database insertion failed:', err);
+            return ws.send(JSON.stringify({
+                type: 'ERROR',
+                nonce,
+                message: 'Database error. Please try again later.'
+            }));
+        }
+
         const newMessage = insertResult.rows[0];
 
         // 4. Success Acknowledgment (ACK)
