@@ -40,12 +40,12 @@ Run `hao-portfolio` (`pnpm dev` on port 3000) in parallel for end-to-end Trace t
 
 - Commit in **this repo only**; do not mix with hao-portfolio changes in one commit.
 - Prefix examples: `fix:`, `feat:`, `refactor:`, `chore:`, `docs:`
-- After changes, **ask the user** if README / AGENTS.md / `.env.example` need updating (see main [AGENTS.md](https://github.com/coolKIH/hao-portfolio/blob/main/AGENTS.md#keeping-documentation-in-sync)).
+- After changes, **ask the user** if README / AGENTS.md should be updated, and if `.env.example` is needed for any env var changes (see main [AGENTS.md](https://github.com/coolKIH/hao-portfolio/blob/main/AGENTS.md#keeping-documentation-in-sync)).
 
-## Documentation
+## Documentation & config templates
 
-| File | When to update |
-|---|---|
-| `README.md` | Env vars, ports, schema SQL, local dev steps |
-| `AGENTS.md` (this file) | Socket-specific agent notes |
-| `.env.example` | New or renamed env vars |
+| File | Type | When to update |
+|---|---|---|
+| `README.md` | Documentation | Env vars, ports, schema SQL, local dev steps |
+| `AGENTS.md` (this file) | Agent guide | Socket-specific agent notes |
+| `.env.example` | Config template | New or renamed env vars only |
