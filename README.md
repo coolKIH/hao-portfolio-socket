@@ -23,7 +23,7 @@ The real-time messaging backbone for the "Footprints" section of my personal por
 | `PORT` | No | Server port (default: `8080`) |
 | `ACCESS_KEY` | Local dev | Shared secret for dev connections; must match `NEXT_PUBLIC_SOCKET_ACCESS_KEY` in hao-portfolio |
 
-Production connections from the Vercel frontend are allowed via `ALLOWED_ORIGIN` without an access key. Local development (`localhost:3000`) uses `?accessKey=...` instead.
+Production connections from the Vercel frontend are allowed via `ALLOWED_ORIGIN` without an access key (currently `https://hao-world.vercel.app`). Local development (`localhost:3000`) uses `?accessKey=...` instead.
 
 ## Database setup
 

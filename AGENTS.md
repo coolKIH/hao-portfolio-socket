@@ -27,7 +27,7 @@ Run `hao-portfolio` (`pnpm dev` on port 3000) in parallel for end-to-end Trace t
 
 ## Auth model
 
-- **Production:** connections allowed from `ALLOWED_ORIGIN` (Vercel URL).
+- **Production:** connections allowed from `ALLOWED_ORIGIN` (currently `https://hao-world.vercel.app`).
 - **Development:** `localhost` is not in the allowlist; clients must pass `?accessKey=` matching `ACCESS_KEY`.
 
 ## Database

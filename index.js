@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 const ACCESS_KEY = process.env.ACCESS_KEY;
-const ALLOWED_ORIGIN = "https://hao-portfolio-gilt.vercel.app";
+const ALLOWED_ORIGIN = "https://hao-world.vercel.app";
 
 // --- Database Configuration ---
 const pool = new Pool({
